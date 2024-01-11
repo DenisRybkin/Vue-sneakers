@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Card from '@/components/Card.vue'
-import { IProduct } from '@/api/models/Product'
+import type { IProduct } from '@/api/models/Product'
 
 interface Props {
   items?: IProduct[]

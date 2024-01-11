@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import DrawerHead from '@/components/DrawerHead.vue'
 import CartItemList from '@/components/CartItemList.vue'
-import { IProduct } from '@/api/models/Product'
+import type { IProduct } from '@/api/models/Product'
 import { computed, ref } from 'vue'
-import { OrderModel } from '@/api/models/Order'
+import type { OrderModel } from '@/api/models/Order'
 import InfoBlock from '@/components/InfoBlock.vue'
 
 interface Props {

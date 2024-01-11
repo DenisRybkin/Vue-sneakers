@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, inject, Ref } from 'vue'
+import { computed, inject } from 'vue'
+import type { Ref } from 'vue'
 import type { IProduct } from '@/api/models/Product'
 
 const { openDrawer } = inject<{ openDrawer: () => void; closeDrawer: () => void }>('cartData')!

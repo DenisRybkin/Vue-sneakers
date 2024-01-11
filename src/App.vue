@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { onMounted, ref, provide } from 'vue'
+import { onMounted, provide, ref } from 'vue'
 
 import { apiService } from '@/api/api-service'
 import RootLayout from '@/components/layouts/RootLayout.vue'
-import CardList from '@/components/CardList.vue'
 import Drawer from '@/components/Drawer.vue'
 import type { IProduct } from '@/api/models/Product'
-import { FavoriteModel } from '@/api/models/Favorite'
+import type { FavoriteModel } from '@/api/models/Favorite'
 import type { CartItemModel } from '@/api/models/CartItemModel'
 import type { OrderModel } from '@/api/models/Order'
-import Home from '@/pages/Home.vue'
 
 const items = ref<IProduct[]>([])
 

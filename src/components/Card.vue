@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { inject } from 'vue'
-import type { ProductModel } from '@/api/models/Product'
-
 interface Props {
   id: number
   imageUrl: string
@@ -9,8 +6,8 @@ interface Props {
   price: number
   isAdded: boolean
   isFavorite: boolean
-  onClickFavorite: (event: MouseEvent) => void
-  onClickAdd: (event: MouseEvent) => void
+  onClickFavorite: (() => void) | null
+  onClickAdd: (() => void) | null
 }
 
 defineProps<Props>()
@@ -24,7 +21,7 @@ defineProps<Props>()
       :src="isFavorite ? '/like-2.svg' : '/like-1.svg'"
       alt="Like"
       class="absolute top-8 left-8"
-      @click="onClickFavorite"
+      @click="onClickFavorite ?? undefined"
     />
     <img :src="imageUrl" alt="Sneaker" />
     <p class="mt-5">{{ title }}</p>
@@ -34,7 +31,11 @@ defineProps<Props>()
         <span class="text-slate-500">Цена:</span>
         <b>{{ price }} руб.</b>
       </div>
-      <img @click="onClickAdd" :src="isAdded ? '/checked.svg' : '/plus.svg'" alt="Action" />
+      <img
+        @click="onClickAdd ?? undefined"
+        :src="isAdded ? '/checked.svg' : '/plus.svg'"
+        alt="Action"
+      />
     </div>
   </div>
 </template>

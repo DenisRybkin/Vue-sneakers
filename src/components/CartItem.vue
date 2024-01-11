@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// const emit = defineEmits(['onClickRemove'])
-
 interface Props {
   id: number
   title: string

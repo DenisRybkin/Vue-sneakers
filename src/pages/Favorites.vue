@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { Ref, inject } from 'vue'
-import { IProduct } from '@/api/models/Product'
+import { inject } from 'vue'
+import type { Ref } from 'vue'
+import type { IProduct } from '@/api/models/Product'
 import CardList from '@/components/CardList.vue'
 
 interface InjectData {
   items: Ref<IProduct[]>
 }
 
-const { items } = inject<InjectData>('homeData')
+const { items } = inject<InjectData>('homeData')!
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 
-const { closeDrawer } = inject<{ openDrawer: () => void; closeDrawer: () => void }>('cartData')
+const { closeDrawer } = inject<{ openDrawer: () => void; closeDrawer: () => void }>('cartData')!
 </script>
 
 <template>

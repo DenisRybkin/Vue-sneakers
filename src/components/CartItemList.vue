@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import CartItem from '@/components/CartItem.vue'
-import { IProduct } from '@/api/models/Product'
+import type { IProduct } from '@/api/models/Product'
 import { inject } from 'vue'
 
 interface Props {
   items?: IProduct[]
 }
 defineProps<Props>()
-const { toggleCartItem } = inject<{ toggleCartItem: (item: IProduct) => void }>('cartData')
+const { toggleCartItem } = inject<{ toggleCartItem: (item: IProduct) => void }>('cartData')!
 </script>
 
 <template>

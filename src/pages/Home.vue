@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import CardList from '@/components/CardList.vue'
 import { inject } from 'vue'
-import { IProduct } from '@/api/models/Product'
-import { Ref, ref, watch } from 'vue'
+import type { IProduct } from '@/api/models/Product'
+import { ref, watch } from 'vue'
+import type { Ref } from 'vue'
 interface InjectData {
   items: Ref<IProduct[]>
   fetchItems: (sortBy?: string, searchBy?: string) => Promise<void>
@@ -10,7 +11,7 @@ interface InjectData {
   toggleCartItem: (item: IProduct) => Promise<void>
 }
 
-const { items, fetchItems, toggleFavorite, toggleCartItem } = inject<InjectData>('homeData')
+const { items, fetchItems, toggleFavorite, toggleCartItem } = inject<InjectData>('homeData')!
 
 const sortBy = ref<string>('title')
 const searchBy = ref<string>('')
