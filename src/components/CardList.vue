@@ -11,8 +11,9 @@ interface Emits {
   (event: 'toggleCartItem', payload: IProduct): void
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 const emit = defineEmits<Emits>()
+console.log(props.isFavorites)
 </script>
 
 <template>
